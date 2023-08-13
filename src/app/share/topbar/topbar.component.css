@@ -1,0 +1,9 @@
+.time {
+  font-size: 0.75em;
+}
+
+@media only screen and (max-width: 600px) {
+  .time {
+    display: none;
+  }
+}

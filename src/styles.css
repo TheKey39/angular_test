@@ -1,1 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.column-gap {
+  column-gap: 10px;
+}
+.row-gap {
+  row-gap: 10px;
+}
+
+.rq::after {
+  content: "*";
+  color: red;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  display: none !important;
+}
+
+@media only screen and (max-width: 768px) {
+    .col-md-4 ,.col-md-3{
+      padding-top:1rem;
+    }
+  }

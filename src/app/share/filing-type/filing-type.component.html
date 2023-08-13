@@ -1,0 +1,12 @@
+<div class="row" *ngIf="filingType">
+    <div class="col-md-12 d-flex flex-column row-gap">
+        <span>Type of filling <span class="rq"></span> </span>
+
+        <mat-radio-group [formControl]="filingType" (change)="change_e()">
+            <mat-radio-button value="0">Ordinary Filling</mat-radio-button>
+            <mat-radio-button value="1">Additional Filling</mat-radio-button>
+          </mat-radio-group>
+    </div>
+</div>
+
+  

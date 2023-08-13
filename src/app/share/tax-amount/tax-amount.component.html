@@ -1,0 +1,11 @@
+<div class="row pt-4" *ngIf="taxAmount">
+    <div class="col-md-8 d-flex align-items-center">
+        <span>2. Total VAT to be remitted (7% of 1.)</span>
+    </div>
+    <div class="col-md-4 d-flex justify-content-end">
+        <mat-form-field appearance="outline">
+            <span matSuffix class="pe-3">THB </span>
+            <input matInput [formControl]="taxAmount" class="right" placeholder="0" type="text" (change)="setTwoNumberDecimal()" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');">
+          </mat-form-field>
+    </div>
+</div>

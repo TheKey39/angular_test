@@ -1,0 +1,48 @@
+<div class="container p-5">
+  <div class="row ">
+    <div class="col-md-12 d-flex justify-content-center">
+        <h2>Submit Tax Filling</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <mat-stepper [linear]="true" #stepper labelPosition="bottom">
+        <mat-step [stepControl]="firstFormGroup" label="Input Detail">
+          <form [formGroup]="firstFormGroup">
+            <mat-card>
+              <mat-card-content>
+                <div class="p-3">
+                    <app-input-detail
+                    [form]="firstFormGroup"
+                  ></app-input-detail>
+                </div>
+              </mat-card-content>
+            </mat-card>
+            <div>
+              <button mat-button matStepperNext (click)="log()">Next</button>
+            </div>
+          </form>
+        </mat-step>
+
+        <mat-step [stepControl]="secondFormGroup" label="Review & Confirm">
+          <form [formGroup]="secondFormGroup">
+            <mat-card>
+              <mat-card-content>
+                <app-input-detail
+                  [name]="secondFormGroup.get('secondCtrl')"
+                ></app-input-detail>
+              </mat-card-content>
+            </mat-card>
+
+            <div>
+              <button mat-button matStepperPrevious (click)="log()">
+                Previous
+              </button>
+              <button mat-button matStepperNext (click)="log()">Next</button>
+            </div>
+          </form>
+        </mat-step>
+      </mat-stepper>
+    </div>
+  </div>
+</div>
