@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
+import { AlertComponentService } from '../../service/alert-component.service';
 
 @Component({
   selector: 'app-review-confirm',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./review-confirm.component.css']
 })
 export class ReviewConfirmComponent {
+  @Input() form: any;
 
+
+  constructor(private alert_service:AlertComponentService) {}
+
+  ngOnInit() {
+  }
 }

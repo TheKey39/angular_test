@@ -1,1 +1,76 @@
-<p>review-confirm works!</p>
+<div class="row">
+  <div class="col-md-12">
+    <h5>Tax Filling Detail</h5>
+    <hr />
+  </div>
+</div>
+
+<div class="row pt-3">
+  <div class="col-md-4">
+    <b>Type of filing</b>
+  </div>
+  <div class="col-md-4">
+    <span>{{
+      form.value.filingType == "0" ? "Ordinary Filling" : "Additional Filling"
+    }}</span>
+  </div>
+</div>
+
+<div class="row pt-3">
+  <div class="col-md-4">
+    <b>VAT Month</b>
+  </div>
+  <div class="col-md-4">
+    <span>{{ form.value.month }} {{ form.value.year }}</span>
+  </div>
+</div>
+
+<div class="row pt-5">
+  <div class="col-md-12">
+    <h5>Tax Computation</h5>
+    <hr />
+  </div>
+</div>
+
+<div class="row pt-4">
+  <div class="col-md-8">
+    <b>Total value of taxible electronic service exclusive of VAT</b>
+  </div>
+  <div class="col-md-4 d-flex justify-content-end">
+    <span>{{ form.value.saleAmount.toLocaleString("en-US") }} THB</span>
+  </div>
+</div>
+
+<div class="row pt-4">
+  <div class="col-md-8 d-flex flex-column row-gap">
+    <b>Total VAT to be remitted</b>
+    <span
+      >(7% of Total value of taxible electronic service exclusive of VAT)</span
+    >
+  </div>
+  <div class="col-md-4 d-flex justify-content-end align-items-center">
+    <span>{{ form.value.taxAmount.toLocaleString("en-US") }} THB</span>
+  </div>
+</div>
+
+<div class="row pt-4">
+  <div class="col-md-8">
+    <b>Total Amount Payable</b>
+  </div>
+  <div class="col-md-4 d-flex justify-content-end">
+    <b>{{ form.value.totalAmount.toLocaleString("en-US") }} THB</b>
+  </div>
+</div>
+
+<div class="row pt-5">
+  <div class="col-md-12">
+    <h5>Declaration</h5>
+    <hr />
+  </div>
+</div>
+
+<div class="row pt-3 pb-2">
+  <div class="col-md-12">
+    <span>I hereby certify that information given above are true and correct and agree to be bound by such information.</span>
+  </div>
+</div>

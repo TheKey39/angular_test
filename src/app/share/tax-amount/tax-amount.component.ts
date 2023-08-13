@@ -1,4 +1,4 @@
-import { Component, Input, SimpleChanges, OnInit } from '@angular/core';
+import { Component, Input, SimpleChanges, OnInit , Output,EventEmitter} from '@angular/core';
 
 @Component({
   selector: 'app-tax-amount',
@@ -6,28 +6,25 @@ import { Component, Input, SimpleChanges, OnInit } from '@angular/core';
   styleUrls: ['./tax-amount.component.css'],
 })
 export class TaxAmountComponent {
+  @Output() change_event = new EventEmitter<any>();
   @Input() taxAmount: any;
-  old_tax: any;
+
 
   setTwoNumberDecimal() {
-    let num: any = parseFloat(this.taxAmount.value).toFixed(2);
+    this.change_event.emit(this.taxAmount.value);
+  }
 
-    if (this.diff(this.old_tax, num) > 20) {
-      // this.taxAmount.setValue(Number(this.old_tax).toLocaleString('en-US'));
+  remove_comma() {
+    if (!this.taxAmount.value) {
       return;
     }
-    this.taxAmount.setValue(Number(num).toLocaleString('en-US'));
+    let amount =  this.taxAmount.value.toString().replaceAll(',','');
+    this.taxAmount.setValue(parseFloat(amount).toFixed(2));
   }
+
 
   ngOnInit() {
-    this.old_tax = this.taxAmount?.value;
+
   }
 
-  diff(num1: any, num2: any) {
-    if (num1 > num2) {
-      return num1 - num2;
-    } else {
-      return num2 - num1;
-    }
-  }
 }

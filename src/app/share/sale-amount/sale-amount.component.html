@@ -5,7 +5,7 @@
     <div class="col-md-4 d-flex justify-content-end align-items-center">
         <mat-form-field appearance="outline">
             <span matSuffix class="pe-3">THB </span>
-            <input matInput [formControl]="saleAmount" class="right" placeholder="0" type="text" (change)="setTwoNumberDecimal()" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" >
+            <input matInput [formControl]="saleAmount" class="right" placeholder="0" type="text" (blur)="setTwoNumberDecimal()" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');" (focus)="remove_comma()">
           </mat-form-field>
     </div>
 </div>

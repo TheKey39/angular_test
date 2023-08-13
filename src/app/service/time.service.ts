@@ -12,4 +12,5 @@ export class TimeService {
     let time = new Date().toLocaleTimeString();
     return `Time in Thailand : ${time} | ${date}`;
   }
+
 }

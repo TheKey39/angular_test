@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output,SimpleChanges, EventEmitter,OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-total-amount',
@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class TotalAmountComponent {
 
+  @Input() totalAmount:any;
 }

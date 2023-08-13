@@ -1,4 +1,4 @@
-<div class="container p-5">
+<div class="container p-5 pb-0 pt-4">
   <div class="row ">
     <div class="col-md-12 d-flex justify-content-center">
         <h2>Submit Tax Filling</h2>
@@ -8,7 +8,7 @@
     <div class="col-md-12">
       <mat-stepper [linear]="true" #stepper labelPosition="bottom">
         <mat-step [stepControl]="firstFormGroup" label="Input Detail">
-          <form [formGroup]="firstFormGroup">
+          <form [formGroup]="firstFormGroup" (keydown.enter)="(false)">
             <mat-card>
               <mat-card-content>
                 <div class="p-3">
@@ -18,28 +18,26 @@
                 </div>
               </mat-card-content>
             </mat-card>
-            <div>
-              <button mat-button matStepperNext (click)="log()">Next</button>
+            <div class="mt-4">
+              <button mat-raised-button color="primary" matStepperNext (click)="log()">Next</button>
             </div>
           </form>
         </mat-step>
 
-        <mat-step [stepControl]="secondFormGroup" label="Review & Confirm">
-          <form [formGroup]="secondFormGroup">
+        <mat-step label="Review & Confirm">
+          <form >
             <mat-card>
               <mat-card-content>
-                <app-input-detail
-                  [name]="secondFormGroup.get('secondCtrl')"
-                ></app-input-detail>
+                <div class="p-3">
+                <app-review-confirm [form]="firstFormGroup"></app-review-confirm>
+                </div>
               </mat-card-content>
             </mat-card>
-
-            <div>
-              <button mat-button matStepperPrevious (click)="log()">
-                Previous
-              </button>
-              <button mat-button matStepperNext (click)="log()">Next</button>
+            <div class="mt-4 d-flex justify-content-between">
+              <button mat-raised-button color="accent" matStepperPrevious>Back</button>
+              <button mat-raised-button color="primary" matStepperNext (click)="submit()">Confirm and Submit</button>
             </div>
+
           </form>
         </mat-step>
       </mat-stepper>

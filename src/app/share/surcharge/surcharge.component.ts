@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output,SimpleChanges, EventEmitter,OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-surcharge',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./surcharge.component.css']
 })
 export class SurchargeComponent {
+
+  @Input() surcharge:any;
 
 }

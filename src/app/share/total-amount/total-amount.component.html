@@ -1,1 +1,11 @@
-<p>total-amount works!</p>
+<div class="row pt-4" *ngIf="totalAmount">
+    <div class="col-md-8 d-flex align-items-center">
+        <span>5. Total amount of Vat,surcharge,and penalty to be remitted (2.+3.+4.)</span>
+    </div>
+    <div class="col-md-4 d-flex justify-content-end align-items-center">
+        <mat-form-field appearance="outline">
+            <span matSuffix class="pe-3">THB </span>
+            <input matInput [formControl]="totalAmount" class="right" placeholder="0" type="text" readonly  >
+          </mat-form-field>
+    </div>
+</div>
