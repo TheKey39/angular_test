@@ -4,12 +4,12 @@ import { DefaultOutletComponent } from './outlet/default-outlet/default-outlet.c
 import { HomeComponent } from './page/home/home.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  // { path: '', redirectTo: '/home', pathMatch: 'full' },
   {
     path: '',
     component: DefaultOutletComponent,
     children: [
-      { path: 'home', component: HomeComponent, data: { state: 'home' } },
+      { path: '', component: HomeComponent, data: { state: 'home' } },
     ],
   },
 ];
