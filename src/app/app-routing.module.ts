@@ -10,6 +10,7 @@ const routes: Routes = [
     component: DefaultOutletComponent,
     children: [
       { path: '', component: HomeComponent, data: { state: 'home' } },
+      
     ],
   },
 ];
