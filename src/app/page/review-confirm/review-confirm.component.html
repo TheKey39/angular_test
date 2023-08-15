@@ -58,7 +58,7 @@
     <b>Total Amount Payable</b>
   </div>
   <div class="col-md-4 d-flex justify-content-end">
-    <b>{{ form.value.totalAmount.toLocaleString("en-US") }} THB</b>
+    <b>{{ form.value.totalAmount == 0 ? form.value.taxAmount.toLocaleString("en-US") : form.value.totalAmount.toLocaleString("en-US") }} THB</b>
   </div>
 </div>
 
